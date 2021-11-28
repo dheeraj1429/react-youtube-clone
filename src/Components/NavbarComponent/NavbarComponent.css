@@ -1,0 +1,52 @@
+.Navbar__Inner_Div {
+ width: 100%;
+ background: var(--NavbarColor);
+}
+
+.Navbar__Inner_Div {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 0.5rem 2rem;
+}
+
+.Navbar__Logo_Div {
+ display: flex;
+ align-items: center;
+}
+
+svg {
+ width: 22px;
+ height: 20px;
+ cursor: pointer;
+}
+
+.yt__Logo {
+ margin-left: 1rem;
+}
+
+.yt_icon {
+ fill: var(--MainColor);
+}
+
+.Navbar__Icon_Div {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.Navbar__Icon_Div svg {
+ fill: var(--MainColor);
+ margin-right: 1.5rem;
+}
+
+.User__Profile_Div {
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ overflow: hidden;
+}
+
+.User__Profile_Div img {
+ width: 100%;
+}

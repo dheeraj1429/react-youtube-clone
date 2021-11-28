@@ -1,0 +1,23 @@
+.SiderBar__Inner__Div {
+ display: flex;
+ align-items: center;
+ padding: 0.7rem 2rem;
+}
+
+.SiderBar__Inner__Div i {
+ margin-right: 1.5rem;
+ font-size: 1.2rem;
+ color: var(--SmoothGray);
+}
+
+.SiderBar__Inner__Div p {
+ font-size: 0.9rem;
+ font-weight: 500;
+ color: var(--LightColor);
+ width: max-content;
+}
+
+.SiderBar__Inner__Div:hover {
+ background-color: var(--HoverColor);
+ cursor: pointer;
+}
