@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { useSelector } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 
 import './SideBarInnerComponent.css';
 
-function SideBarInnerComponent({ SubTitle, Icon, OnClick, Data, Target }) {
+function SideBarInnerComponent({ SubTitle, Icon, Data, Target }) {
+ const selector = useSelector((state) => state.user.HideAndShowNavBar);
+
  return (
   <Link to={SubTitle.replaceAll(' ', '_')}>
-   <div className="SiderBar__Inner__Div" onClick={OnClick} data-target={Target}>
+   <div className={`${selector !== false ? 'SiderBar__Inner__Div Sm__ActiveBar' : 'SiderBar__Inner__Div '}`}>
     <i className={`${Icon} ${Data}`} />
-    <p>{SubTitle}</p>
+    {selector == false ? <p>{SubTitle}</p> : null}
    </div>
   </Link>
  );

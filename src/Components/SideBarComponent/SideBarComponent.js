@@ -2,9 +2,13 @@ import React from 'react';
 
 import SideBarInnerComponent from '../SideBarInnerComponent/SideBarInnerComponent';
 
+import { useSelector } from 'react-redux';
+
 import './SideBarComponent.css';
 
 function SideBarComponent() {
+ const selector = useSelector((state) => state.user.HideAndShowNavBar);
+
  return (
   <div className="SideBar_Div">
    <SideBarInnerComponent SubTitle={'Home'} Icon={'fas fa-home'} />
@@ -20,7 +24,7 @@ function SideBarComponent() {
 
    <div className="Break__Line"></div>
 
-   <h3 className="Subcribtion__Heading">SUBSCRIPTIONS</h3>
+   {selector == false ? <h3 className="Subcribtion__Heading">SUBSCRIPTIONS</h3> : null}
 
    <SideBarInnerComponent SubTitle={'Music'} Icon={'fab fa-spotify'} />
    <SideBarInnerComponent SubTitle={'Sport'} Icon={'fas fa-trophy'} />
@@ -29,7 +33,7 @@ function SideBarComponent() {
 
    <div className="Break__Line"></div>
 
-   <h3 className="Subcribtion__Heading">MORE FROM YOUTUBE</h3>
+   {selector == false ? <h3 className="Subcribtion__Heading">MORE FROM YOUTUBE</h3> : null}
 
    <SideBarInnerComponent SubTitle={'Youtube premium'} Icon={'fab fa-youtube'} />
    <SideBarInnerComponent SubTitle={'Films'} Icon={'fas fa-film'} />

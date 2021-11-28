@@ -44,9 +44,10 @@ svg {
  width: 30px;
  height: 30px;
  border-radius: 50%;
- overflow: hidden;
+ position: relative;
 }
 
 .User__Profile_Div img {
  width: 100%;
+ border-radius: 50%;
 }

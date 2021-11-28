@@ -1,0 +1,30 @@
+.FilterCard_Div {
+ width: 100%;
+ padding: 0.7rem 1rem;
+ border-top: 1px solid var(--SmoothGrayTwo);
+ border-bottom: 1px solid var(--SmoothGrayTwo);
+ background-color: var(--NavbarColor);
+ display: flex;
+}
+
+.Navbar__Sm_Card {
+ width: auto;
+ padding: 0.3rem 1rem;
+ border-radius: 50px;
+ background-color: var(--RelatedButtonColor);
+ border-top: 1px solid var(--SmoothGrayTwo);
+ border-bottom: 1px solid var(--SmoothGrayTwo);
+ cursor: pointer;
+ margin-right: 0.9rem;
+ color: var(--MainColor);
+ font-weight: 500;
+}
+
+.Navbar__Sm_Card_Active {
+ background-color: var(--MainColor);
+ color: var(--DarkBlack);
+}
+
+.Navbar__Sm_Card p {
+ font-size: 0.9rem;
+}
