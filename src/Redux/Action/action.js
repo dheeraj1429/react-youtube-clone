@@ -13,3 +13,10 @@ export const hideAndShowNavbar = function (data) {
   payload: data,
  };
 };
+
+export const setCurrentUser = (data) => {
+ return {
+  type: ACTION_TYPE.SET_CURRENT_USER,
+  payload: data,
+ };
+};

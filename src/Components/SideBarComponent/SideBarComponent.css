@@ -15,10 +15,3 @@
  margin: 0.5rem 0;
  width: max-content;
 }
-
-.Break__Line {
- width: 100%;
- height: 0.8px;
- background-color: var(--HoverColor);
- margin: 1rem 0;
-}

@@ -19,6 +19,7 @@ const initalState = {
  ],
  Selected_Filter_Data: [{ name: 'All' }],
  HideAndShowNavBar: false,
+ CurrentUserData: null,
 };
 
 const userReducer = function (state = initalState, action) {
@@ -33,6 +34,12 @@ const userReducer = function (state = initalState, action) {
    return {
     ...state,
     HideAndShowNavBar: action.payload,
+   };
+
+  case ACTION_TYPE.SET_CURRENT_USER:
+   return {
+    ...state,
+    CurrentUserData: action.payload,
    };
 
   default:

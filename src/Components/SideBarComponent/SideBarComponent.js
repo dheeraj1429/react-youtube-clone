@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SideBarInnerComponent from '../SideBarInnerComponent/SideBarInnerComponent';
+import LineBreakComponent from '../LineBreakComponent/LineBreakComponent';
 
 import { useSelector } from 'react-redux';
 
@@ -15,14 +16,14 @@ function SideBarComponent() {
    <SideBarInnerComponent SubTitle={'Explore'} Icon={'fas fa-compass'} />
    <SideBarInnerComponent SubTitle={'Subcriptions'} Icon={'fas fa-vote-yea'} />
 
-   <div className="Break__Line"></div>
+   <LineBreakComponent />
 
    <SideBarInnerComponent SubTitle={'Library'} Icon={'fas fa-photo-video'} />
    <SideBarInnerComponent SubTitle={'History'} Icon={'fas fa-history'} />
    <SideBarInnerComponent SubTitle={'Your videos'} Icon={'far fa-clock'} />
    <SideBarInnerComponent SubTitle={'Like'} Icon={'far fa-thumbs-up'} />
 
-   <div className="Break__Line"></div>
+   <LineBreakComponent />
 
    {selector == false ? <h3 className="Subcribtion__Heading">SUBSCRIPTIONS</h3> : null}
 
@@ -31,7 +32,7 @@ function SideBarComponent() {
    <SideBarInnerComponent SubTitle={'Gaming'} Icon={'fas fa-gamepad'} />
    <SideBarInnerComponent SubTitle={'Films'} Icon={'fas fa-film'} />
 
-   <div className="Break__Line"></div>
+   <LineBreakComponent />
 
    {selector == false ? <h3 className="Subcribtion__Heading">MORE FROM YOUTUBE</h3> : null}
 

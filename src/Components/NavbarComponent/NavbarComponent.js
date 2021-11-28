@@ -1,26 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import SearchComponent from '../SearchComponent/SearchComponent';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { hideAndShowNavbar } from '../../Redux/Action/action';
-
+import { signInWithGoogle } from '../../Firebase/Firebase.Utitl';
 import PopUpComponent from '../PopUpComponent/PopUpComponent';
 
 import './NavbarComponent.css';
 
-function NavbarComponent() {
+function NavbarComponent({ Data }) {
  const [ShowPopup, setShowPopup] = useState(false);
+ const [UserPhoto, setUserPhoto] = useState('');
 
- const selector = useSelector((state) => state.user.HideAndShowNavBar);
+ const selector = useSelector((state) => state.user);
  const dispatch = useDispatch();
+ const CurrentUserData = selector.CurrentUserData;
+
+ useEffect(() => {
+  if (Data) {
+   const { photoURL } = Data;
+   setUserPhoto(photoURL);
+  }
+ }, []);
 
  return (
   <div className="Navbar_Div">
    <div className="Navbar__Inner_Div">
     {/* Logo and Bars icon */}
     <div className="Navbar__Logo_Div">
-     <svg onClick={() => dispatch(hideAndShowNavbar(!selector))}>
+     <svg onClick={() => dispatch(hideAndShowNavbar(!selector.HideAndShowNavBar))}>
       <path d="M21,6H3V5h18V6z M21,11H3v1h18V11z M21,17H3v1h18V17z" class="yt_icon"></path>
      </svg>
 
@@ -53,10 +62,16 @@ function NavbarComponent() {
       ></path>
      </svg>
 
-     <div className="User__Profile_Div">
-      <img src="/images/user.jpg" onClick={() => setShowPopup(!ShowPopup)} />
-      <PopUpComponent Data={ShowPopup} />
-     </div>
+     {CurrentUserData == null ? (
+      <div className="SignIn__Div">
+       <p onClick={signInWithGoogle}>Sign In</p>
+      </div>
+     ) : (
+      <div className="User__Profile_Div">
+       <img src={UserPhoto !== null ? UserPhoto : ''} onClick={() => setShowPopup(!ShowPopup)} />
+       <PopUpComponent Data={ShowPopup} />
+      </div>
+     )}
     </div>
    </div>
   </div>
