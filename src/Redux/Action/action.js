@@ -27,3 +27,10 @@ export const setData = function (data) {
   payload: data,
  };
 };
+
+export const selectedMovi = (data) => {
+ return {
+  type: ACTION_TYPE.SELECTED_MOVI,
+  payload: data,
+ };
+};

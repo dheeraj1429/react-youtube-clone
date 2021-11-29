@@ -13,7 +13,7 @@ function HomePage() {
  const dispatch = useDispatch();
 
  const res = async function () {
-  const resData = await fetch(
+  await fetch(
    `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=${Math.trunc(
     Math.random() * 100 + 1
    )}
@@ -38,7 +38,13 @@ function HomePage() {
    </div>
 
    <div className="Video__Card__Component">
-    {VideoData !== undefined ? VideoData.map(({ id, ...otherProps }) => <VideosCardComponent key={id} {...otherProps} />) : null}
+    {VideoData !== undefined ? (
+     VideoData.map(({ id, ...otherProps }) => <VideosCardComponent key={id} {...otherProps} />)
+    ) : (
+     <div className="Snipper__Div">
+      <img src="/images/roling.svg" />
+     </div>
+    )}
    </div>
   </div>
  );

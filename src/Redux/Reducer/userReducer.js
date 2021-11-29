@@ -21,6 +21,7 @@ const initalState = {
  HideAndShowNavBar: false,
  CurrentUserData: null,
  setData: null,
+ selectedMovi: [null],
 };
 
 const userReducer = function (state = initalState, action) {
@@ -47,6 +48,12 @@ const userReducer = function (state = initalState, action) {
    return {
     ...state,
     setData: [action.payload],
+   };
+
+  case ACTION_TYPE.SELECTED_MOVI:
+   return {
+    ...state,
+    selectedMovi: [action.payload],
    };
 
   default:

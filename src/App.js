@@ -6,6 +6,7 @@ import SideBarComponent from './Components/SideBarComponent/SideBarComponent';
 
 // Pages
 import HomePage from './Pages/HomePage/HomePage';
+import VideosPlayPage from './Pages/VideosPlayPage/VideosPlayPage';
 
 import { Routes, Route } from 'react-router';
 import { auth, CreateUserProfileDocument } from './Firebase/Firebase.Utitl';
@@ -39,6 +40,7 @@ function App() {
     {/* Routes */}
     <Routes>
      <Route exact path="/" element={<HomePage />} />
+     <Route exact path="/Video/yt-clone:Name" element={<VideosPlayPage />} />
     </Routes>
     {/* Routes */}
    </div>
