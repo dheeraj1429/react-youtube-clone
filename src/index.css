@@ -13,6 +13,22 @@ code {
  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* width */
+body::-webkit-scrollbar {
+ width: 7px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+ background: var(--BodyColor);
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+ background: var(--SmoothGray);
+ border-radius: 20px;
+}
+
 /* Colors */
 :root {
  --linkColor: #1c72f1;

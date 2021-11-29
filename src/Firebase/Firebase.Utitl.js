@@ -12,6 +12,30 @@ const App = {
  appId: '1:319345219196:web:9f671539e0dd7a31fe5bf9',
 };
 
+// Create User Profile
+export const CreateUserProfileDocument = async function (userAuth, otherData) {
+ if (!userAuth) return;
+
+ const userRef = firestore.doc(`users/${userAuth.uid}`);
+ const snapShot = await userRef.get();
+
+ if (!snapShot.exists) {
+  const { displayName, photoURL, email } = userAuth;
+  const entryTime = new Date();
+
+  try {
+   await userRef.set({
+    displayName,
+    photoURL,
+    email,
+    entryTime,
+   });
+  } catch (err) {
+   console.log(err);
+  }
+ }
+};
+
 firebase.initializeApp(App);
 
 // Exoprting

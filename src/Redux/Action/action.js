@@ -20,3 +20,10 @@ export const setCurrentUser = (data) => {
   payload: data,
  };
 };
+
+export const setData = function (data) {
+ return {
+  type: ACTION_TYPE.SET_DATA,
+  payload: data,
+ };
+};

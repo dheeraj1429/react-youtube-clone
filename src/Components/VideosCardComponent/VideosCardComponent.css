@@ -1,0 +1,54 @@
+.VideoCard__Inner_Div {
+ width: auto;
+ height: auto;
+ margin: 0.9rem 0.5rem;
+}
+
+.VideoCard__Inner_Div .VideoBanner {
+ width: 100%;
+}
+
+.Vider__Details_Div {
+ display: flex;
+ margin: 0.8rem 0;
+}
+
+.User__Profile_Div {
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.User__Profile_Div img {
+ width: 100%;
+}
+
+.Video__Content_Div {
+ margin: 0 0.8rem;
+}
+
+.Video__Content_Div h3 {
+ color: var(--LightColor);
+ font-weight: 500;
+ font-size: 0.9rem;
+}
+
+.Video__Content_Div p {
+ font-size: 0.9rem;
+ margin: 0.3rem 0;
+ font-weight: 500;
+ color: var(--VideoSubTitleColor);
+}
+
+.Video__View {
+ display: flex;
+}
+
+.Video__View p {
+ margin-right: 0.5rem;
+}
+
+/* Media */

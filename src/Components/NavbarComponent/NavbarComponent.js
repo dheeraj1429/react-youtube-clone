@@ -9,20 +9,26 @@ import PopUpComponent from '../PopUpComponent/PopUpComponent';
 
 import './NavbarComponent.css';
 
-function NavbarComponent({ Data }) {
+function NavbarComponent() {
  const [ShowPopup, setShowPopup] = useState(false);
  const [UserPhoto, setUserPhoto] = useState('');
+ const [UserName, setUserName] = useState('');
 
  const selector = useSelector((state) => state.user);
  const dispatch = useDispatch();
  const CurrentUserData = selector.CurrentUserData;
 
- useEffect(() => {
-  if (Data) {
-   const { photoURL } = Data;
+ const res = async function () {
+  await CurrentUserData;
+  if (CurrentUserData) {
+   const { photoURL } = CurrentUserData;
+   const { displayName } = CurrentUserData;
    setUserPhoto(photoURL);
+   setUserName(displayName);
   }
- }, []);
+ };
+
+ res();
 
  return (
   <div className="Navbar_Div">
@@ -69,7 +75,7 @@ function NavbarComponent({ Data }) {
      ) : (
       <div className="User__Profile_Div">
        <img src={UserPhoto !== null ? UserPhoto : ''} onClick={() => setShowPopup(!ShowPopup)} />
-       <PopUpComponent Data={ShowPopup} />
+       <PopUpComponent Data={ShowPopup} Name={UserName} PhotoUrl={UserPhoto} />
       </div>
      )}
     </div>

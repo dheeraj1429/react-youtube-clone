@@ -1,4 +1,18 @@
 .HomePage {
  width: 100%;
+ height: auto;
  background-color: var(--BodyColor);
+}
+
+.Videos__Card_Div {
+ width: 100%;
+ height: auto;
+ padding: 1rem 5rem;
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+}
+
+.Video__Card__Component {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
 }

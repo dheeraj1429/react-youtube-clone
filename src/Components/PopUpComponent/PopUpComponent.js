@@ -7,7 +7,7 @@ import { auth } from '../../Firebase/Firebase.Utitl';
 
 import './PopUpComponent.css';
 
-function PopUpComponent({ Data }) {
+function PopUpComponent({ Data, Name, PhotoUrl }) {
  const SignOutUser = function () {
   auth.signOut();
  };
@@ -15,8 +15,10 @@ function PopUpComponent({ Data }) {
  return (
   <div className={Data == false ? 'Popup__Container_Div ' : 'Popup__Container_Div ShowPopUp'}>
    <div className="UserProfile__Div">
-    <div className="UserImg_Div"></div>
-    <p>Name</p>
+    <div className="UserImg_Div">
+     <img src={PhotoUrl} />
+    </div>
+    <p>{Name}</p>
    </div>
    <LineBreakComponent />
 

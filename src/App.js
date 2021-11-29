@@ -8,7 +8,7 @@ import SideBarComponent from './Components/SideBarComponent/SideBarComponent';
 import HomePage from './Pages/HomePage/HomePage';
 
 import { Routes, Route } from 'react-router';
-import { auth } from './Firebase/Firebase.Utitl';
+import { auth, CreateUserProfileDocument } from './Firebase/Firebase.Utitl';
 import { setCurrentUser } from './Redux/Action/action';
 import { useDispatch } from 'react-redux';
 
@@ -25,12 +25,13 @@ function App() {
   auth.onAuthStateChanged((userAuth) => {
    setCurrentUserData({ CurrentUserLogIn: userAuth });
    dispatch(setCurrentUser(userAuth));
+   CreateUserProfileDocument(userAuth);
   });
  }, []);
 
  return (
   <div className="App">
-   <NavbarComponent Data={CurrentUserData.CurrentUserLogIn} />
+   <NavbarComponent />
 
    <div className="Home__Container_Div">
     <SideBarComponent />
