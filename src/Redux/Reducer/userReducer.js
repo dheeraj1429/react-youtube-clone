@@ -1,22 +1,7 @@
 import { ACTION_TYPE } from '../ActionType/actionType';
 
 const initalState = {
- Navbar_Filter_Data: [
-  { name: 'All' },
-  { name: 'Music' },
-  { name: 'Live' },
-  { name: 'Lo-fi' },
-  { name: 'New-Age Music' },
-  { name: 'Playlist' },
-  { name: 'Instrumentals' },
-  { name: 'Java Script' },
-  { name: 'Bollywood Music' },
-  { name: 'The Weekend' },
-  { name: 'Animi' },
-  { name: 'Cryptocurrency' },
-  { name: 'Wordpress' },
-  { name: 'Rapping' },
- ],
+ Navbar_Filter_Data: [{ name: 'All' }],
  Selected_Filter_Data: [{ name: 'All' }],
  HideAndShowNavBar: false,
  CurrentUserData: null,
@@ -54,6 +39,17 @@ const userReducer = function (state = initalState, action) {
    return {
     ...state,
     selectedMovi: [action.payload],
+   };
+
+  case ACTION_TYPE.SET_SEARCH_DATA:
+   return {
+    ...state,
+    Navbar_Filter_Data: [
+     ...state.Navbar_Filter_Data,
+     {
+      name: action.payload,
+     },
+    ],
    };
 
   default:

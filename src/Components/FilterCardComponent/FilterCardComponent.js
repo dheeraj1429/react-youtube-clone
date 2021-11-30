@@ -12,17 +12,19 @@ function FilterCardComponent() {
 
  return (
   <div className="FilterCard_Div">
-   {selector.Navbar_Filter_Data.map((el) => (
-    <div
-     key={el.name}
-     className={`${
-      SelectedFilterData !== null ? (SelectedFilterData[0].name === el.name ? 'Navbar__Sm_Card Navbar__Sm_Card_Active' : 'Navbar__Sm_Card') : null
-     }`}
-     onClick={() => dispatch(selectFilterButton(el))}
-    >
-     <p>{el.name}</p>
-    </div>
-   ))}
+   {/* {selector.length > 1
+    ? selector.Navbar_Filter_Data.map((el) => (
+       <div
+        key={el.name}
+        className={`${
+         SelectedFilterData !== null ? (SelectedFilterData[0].name === el.name ? 'Navbar__Sm_Card Navbar__Sm_Card_Active' : 'Navbar__Sm_Card') : null
+        }`}
+        onClick={() => dispatch(selectFilterButton(el))}
+       >
+        <p>{el.name}</p>
+       </div>
+      ))
+    : null} */}
   </div>
  );
 }

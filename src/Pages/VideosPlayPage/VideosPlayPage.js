@@ -1,21 +1,24 @@
 import React from 'react';
 import VideoPlayComponent from '../../Components/VideoPlayComponent/VideoPlayComponent';
 
+import { useSelector } from 'react-redux';
+
 import './VideosPlayPage.css';
 
 function VideosPlayPage(props) {
- console.log(props);
+ const selector = useSelector((state) => state.user.selectedMovi);
+
  return (
   <div className="yt__Videos_PlayPage_Div">
    <div className="yt__Videos_Container">
     <div className="yt__Videos_Show_Div">
      <VideoPlayComponent />
 
-     <h3>Chill beats | beats for relaxing</h3>
+     <h3>{selector[0].title}</h3>
      <div className="yt__Videos__Flex_Div">
       <div className="yt__Videos_Details_Div">
-       <p>900k views</p>
-       <p>Prime mimber</p>
+       <p>{selector[0].popularity}k views</p>
+       <p>{selector[0].original_title}</p>
       </div>
 
       <div className="yt__Videos_Link_Div">

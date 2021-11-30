@@ -34,3 +34,7 @@
 .ActiveDiv i {
  color: var(--MainColor) !important;
 }
+
+.Hide_SideBar_Icon {
+ display: none;
+}

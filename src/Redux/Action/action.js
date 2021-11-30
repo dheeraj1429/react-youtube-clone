@@ -34,3 +34,10 @@ export const selectedMovi = (data) => {
   payload: data,
  };
 };
+
+export const setSerchData = function (data) {
+ return {
+  type: ACTION_TYPE.SET_SEARCH_DATA,
+  payload: data,
+ };
+};

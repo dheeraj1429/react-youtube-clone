@@ -31,3 +31,22 @@
 .Snipper__Div img {
  width: 30px;
 }
+
+/* media */
+@media (max-width: 800px) {
+ .Video__Card__Component {
+  grid-template-columns: repeat(3, 1fr);
+ }
+}
+
+@media (max-width: 600px) {
+ .Video__Card__Component {
+  grid-template-columns: repeat(2, 1fr);
+ }
+}
+
+@media (max-width: 400px) {
+ .Video__Card__Component {
+  grid-template-columns: repeat(1, 1fr);
+ }
+}
