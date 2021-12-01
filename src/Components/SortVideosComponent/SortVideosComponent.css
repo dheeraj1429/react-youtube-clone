@@ -1,0 +1,23 @@
+.yt__Recommond_Videos_Innre_Div {
+ display: flex;
+ margin: 0.7rem 0.5rem;
+}
+
+.yt__Recommond_Videos_Innre_Div img {
+ height: 140px;
+ margin-right: 0.6rem;
+ margin-top: 0;
+}
+
+.yt__Recommond_Inner_Content h3 {
+ color: var(--LightColor);
+ font-size: 0.8rem;
+ max-width: 100px;
+}
+
+.yt__Recommond_Inner_Content p {
+ color: var(--VideoSubTitleColor);
+ font-size: 0.8rem;
+ margin: 0.3rem 0;
+ max-width: 100px;
+}

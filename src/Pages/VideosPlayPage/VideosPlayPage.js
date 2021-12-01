@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoPlayComponent from '../../Components/VideoPlayComponent/VideoPlayComponent';
 
+import YtRecommendVidesComponent from '../../Components/YtRecommendVideosComponent/YtRecommendVidesComponent';
 import { useSelector } from 'react-redux';
 
 import './VideosPlayPage.css';
@@ -55,7 +56,7 @@ function VideosPlayPage(props) {
      </div>
     </div>
 
-    <div className="yt__Recommened_Videos_Div"></div>
+    <YtRecommendVidesComponent />
    </div>
   </div>
  );

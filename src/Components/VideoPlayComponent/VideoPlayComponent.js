@@ -22,7 +22,7 @@ function VideoPlayComponent() {
    const param = data.get('v');
    setYoutubeVideo(param);
   });
- }, []);
+ }, [selector[0].title]);
 
  const opts = {
   playerVars: {
