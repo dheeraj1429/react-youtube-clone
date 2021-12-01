@@ -58,3 +58,8 @@ svg {
  color: var(--MainColor);
  cursor: pointer;
 }
+
+.LightLogo {
+ margin-left: 0.5rem;
+ margin-top: 0.4rem;
+}

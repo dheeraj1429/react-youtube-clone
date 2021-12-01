@@ -10,6 +10,12 @@
  padding-left: 2rem;
 }
 
+.Icon__Inner_Div {
+ display: flex;
+ align-items: center;
+ width: 100%;
+}
+
 .SiderBar__Inner__Div i {
  margin-right: 1.5rem;
  color: var(--SmoothGray);

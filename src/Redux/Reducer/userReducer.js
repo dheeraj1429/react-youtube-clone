@@ -1,12 +1,15 @@
 import { ACTION_TYPE } from '../ActionType/actionType';
 
 const initalState = {
- Navbar_Filter_Data: [{ name: 'All' }],
- Selected_Filter_Data: [{ name: 'All' }],
- HideAndShowNavBar: false,
+ Navbar_Filter_Data: [],
+ Selected_Filter_Data: [{ name: '' }],
+ HideAndShowNavBar: true,
  CurrentUserData: null,
  setData: null,
  selectedMovi: [null],
+ showPopUp: false,
+ showSecondPopUp: false,
+ mode: false,
 };
 
 const userReducer = function (state = initalState, action) {
@@ -50,6 +53,24 @@ const userReducer = function (state = initalState, action) {
       name: action.payload,
      },
     ],
+   };
+
+  case ACTION_TYPE.SHOW_POPUP:
+   return {
+    ...state,
+    showPopUp: action.payload,
+   };
+
+  case ACTION_TYPE.SHOW_SECOND_POPUP:
+   return {
+    ...state,
+    showSecondPopUp: action.payload,
+   };
+
+  case ACTION_TYPE.MODE:
+   return {
+    ...state,
+    mode: action.payload,
    };
 
   default:

@@ -50,6 +50,26 @@ body::-webkit-scrollbar-thumb {
  --HoverColor: #383838;
 }
 
+[data-theme='dark'] {
+ --linkColor: #1cdff1;
+ --SubscribeButtonColor: #cc0000;
+ --LiveButton: #ff4e45;
+ --ViewReplayButton: #2187ff;
+ --MainColor: rgb(0, 0, 0);
+ --DarkBlack: rgb(255, 255, 255);
+ --NavbarColor: #ffffff;
+ --ScrollNavbarColor: #ffffff;
+ --NavbarButtonBgColor: #e6e6e6;
+ --RelatedButtonColor: #b1b1b1;
+ --VideoSubTitleColor: #525252;
+ --BodyColor: #f9f9f9;
+ --LightColor: #313131;
+ --LightColorTwo: #555555;
+ --SmoothGray: #4d4d4d;
+ --SmoothGrayTwo: #afafaf;
+ --HoverColor: #9c9c9c;
+}
+
 /* Gloabal Classes */
 
 .Container {

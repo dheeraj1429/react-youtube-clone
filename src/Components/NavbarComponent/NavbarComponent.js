@@ -5,12 +5,13 @@ import SearchComponent from '../SearchComponent/SearchComponent';
 import { useDispatch, useSelector } from 'react-redux';
 import { hideAndShowNavbar } from '../../Redux/Action/action';
 import { signInWithGoogle } from '../../Firebase/Firebase.Utitl';
+import { showPopup } from '../../Redux/Action/action';
+
 import PopUpComponent from '../PopUpComponent/PopUpComponent';
 
 import './NavbarComponent.css';
 
 function NavbarComponent() {
- const [ShowPopup, setShowPopup] = useState(false);
  const [UserPhoto, setUserPhoto] = useState('');
  const [UserName, setUserName] = useState('');
 
@@ -39,7 +40,7 @@ function NavbarComponent() {
       <path d="M21,6H3V5h18V6z M21,11H3v1h18V11z M21,17H3v1h18V17z" class="yt_icon"></path>
      </svg>
 
-     <img src="/images/logo-pn.png" className="yt__Logo" />
+     {selector.mode == false ? <img src="/images/logo-pn.png" className="yt__Logo" /> : <img src="/images/light-logo.png" className="LightLogo" />}
     </div>
 
     {/* Search Component */}
@@ -74,8 +75,8 @@ function NavbarComponent() {
       </div>
      ) : (
       <div className="User__Profile_Div">
-       <img src={UserPhoto !== null ? UserPhoto : ''} onClick={() => setShowPopup(!ShowPopup)} />
-       <PopUpComponent Data={ShowPopup} Name={UserName} PhotoUrl={UserPhoto} />
+       <img src={UserPhoto !== null ? UserPhoto : ''} onClick={() => dispatch(showPopup(!selector.showPopUp))} />
+       <PopUpComponent Data={selector.showPopUp} Name={UserName} PhotoUrl={UserPhoto} />
       </div>
      )}
     </div>

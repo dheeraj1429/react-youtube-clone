@@ -2,19 +2,48 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { showPopup } from '../../Redux/Action/action';
+import { changeMode } from '../../Redux/Action/action';
 
 import './SideBarInnerComponent.css';
 
-function SideBarInnerComponent({ SubTitle, Icon, Data, onClick, Hide }) {
- const selector = useSelector((state) => state.user.HideAndShowNavBar);
+function SideBarInnerComponent({ SubTitle, Icon, Data, onClick, Hide, Arrow, SecondPopup }) {
+ const selector = useSelector((state) => state.user);
+ const dispatch = useDispatch();
+
+ const ChangeStateHandler = function () {
+  if (selector.mode == false) {
+   document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+   document.documentElement.setAttribute('data-theme', 'light');
+  }
+
+  dispatch(showPopup(!selector.showPopUp));
+  dispatch(changeMode(!selector.mode));
+ };
 
  return (
-  <Link to={SubTitle == 'Sign Out' || SubTitle == 'Home' ? '/' : SubTitle.replaceAll(' ', '_')}>
-   <div className={`${selector !== false ? 'SiderBar__Inner__Div Sm__ActiveBar' : 'SiderBar__Inner__Div '}`} onClick={onClick ? onClick : null}>
-    <i className={`${Icon} ${Data}`} />
-    {selector == false && Hide ? null : <p>{SubTitle}</p>}
-   </div>
-  </Link>
+  <>
+   <Link
+    to={
+     SubTitle == 'Sign Out' || SubTitle == 'Home' || SubTitle == 'Appearance: Dark' || SubTitle == 'Appearance: Light'
+      ? '/'
+      : SubTitle.replaceAll(' ', '_')
+    }
+   >
+    <div
+     className={`${selector.HideAndShowNavBar !== false ? 'SiderBar__Inner__Div Sm__ActiveBar' : 'SiderBar__Inner__Div '}`}
+     onClick={onClick ? onClick : null}
+    >
+     <div className="Icon__Inner_Div" onClick={SecondPopup ? ChangeStateHandler : null}>
+      <i className={`${Icon} ${Data}`} />
+      {selector.HideAndShowNavBar == false && Hide ? null : <p>{SubTitle}</p>}
+     </div>
+     {Arrow ? <i className={`${Arrow} Arrow_Icon`}></i> : null}
+    </div>
+   </Link>
+  </>
  );
 }
 

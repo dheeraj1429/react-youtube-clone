@@ -4,6 +4,7 @@ import SideBarInnerComponent from '../SideBarInnerComponent/SideBarInnerComponen
 import LineBreakComponent from '../LineBreakComponent/LineBreakComponent';
 
 import { auth } from '../../Firebase/Firebase.Utitl';
+import { useSelector } from 'react-redux';
 
 import './PopUpComponent.css';
 
@@ -11,6 +12,8 @@ function PopUpComponent({ Data, Name, PhotoUrl }) {
  const SignOutUser = function () {
   auth.signOut();
  };
+
+ const selector = useSelector((state) => state.user);
 
  return (
   <div className={Data == false ? 'Popup__Container_Div ' : 'Popup__Container_Div ShowPopUp'}>
@@ -29,7 +32,7 @@ function PopUpComponent({ Data, Name, PhotoUrl }) {
 
    <LineBreakComponent />
 
-   <SideBarInnerComponent SubTitle={'Appearance: Theme'} Icon={'fas fa-moon'} />
+   <SideBarInnerComponent SubTitle={`Appearance: ${selector.mode == false ? 'Dark' : 'Light'}`} Icon={'fas fa-moon'} SecondPopup={true} />
    <SideBarInnerComponent SubTitle={'Setting'} Icon={'fas fa-cog'} />
    <SideBarInnerComponent SubTitle={'Help'} Icon={'fas fa-question-circle'} />
   </div>

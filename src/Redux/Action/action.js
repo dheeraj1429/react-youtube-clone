@@ -41,3 +41,24 @@ export const setSerchData = function (data) {
   payload: data,
  };
 };
+
+export const showPopup = function (data) {
+ return {
+  type: ACTION_TYPE.SHOW_POPUP,
+  payload: data,
+ };
+};
+
+export const showSecondPopup = function (data) {
+ return {
+  type: ACTION_TYPE.SHOW_SECOND_POPUP,
+  payload: data,
+ };
+};
+
+export const changeMode = function (data) {
+ return {
+  type: ACTION_TYPE.MODE,
+  payload: data,
+ };
+};
