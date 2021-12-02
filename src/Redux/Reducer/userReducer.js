@@ -1,8 +1,8 @@
 import { ACTION_TYPE } from '../ActionType/actionType';
 
 const initalState = {
- Navbar_Filter_Data: [],
- Selected_Filter_Data: [{ name: '' }],
+ Navbar_Filter_Data: [{ name: 'All' }],
+ Selected_Filter_Data: [{ name: 'All' }],
  HideAndShowNavBar: true,
  CurrentUserData: null,
  setData: null,
@@ -10,6 +10,23 @@ const initalState = {
  showPopUp: false,
  showSecondPopUp: false,
  mode: false,
+ LikeVideos: [],
+};
+
+const dataCombine = function (data, setData) {
+ const exiting = data.find((el) => el.title === setData.title);
+
+ if (exiting) {
+  return data.map((el) =>
+   el.title === setData.title
+    ? {
+       ...el,
+      }
+    : data
+  );
+ }
+
+ return [...data, { ...setData }];
 };
 
 const userReducer = function (state = initalState, action) {
@@ -73,6 +90,17 @@ const userReducer = function (state = initalState, action) {
     mode: action.payload,
    };
 
+  case ACTION_TYPE.LIKE_VIDEOS:
+   return {
+    ...state,
+    LikeVideos: dataCombine(state.LikeVideos, action.payload),
+    // LikeVideos: [
+    //  ...state.LikeVideos,
+    //  {
+    //   ...action.payload,
+    //  },
+    // ],
+   };
   default:
    return state;
  }

@@ -62,3 +62,10 @@ export const changeMode = function (data) {
   payload: data,
  };
 };
+
+export const likeVideos = function (data) {
+ return {
+  type: ACTION_TYPE.LIKE_VIDEOS,
+  payload: data,
+ };
+};

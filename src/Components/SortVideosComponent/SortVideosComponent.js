@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import { selectedMovi } from '../../Redux/Action/action';
 import './SortVideosComponent.css';
 
-function SortVideosComponent({ poster_path, original_title, release_date, title, popularity, backdrop_path }) {
+function SortVideosComponent({ poster_path, original_title, release_date, title, popularity, backdrop_path, overview, vote_count }) {
  const dispatch = useDispatch();
  const SendHandler = function () {
-  dispatch(selectedMovi({ poster_path, original_title, release_date, popularity, title }));
+  dispatch(selectedMovi({ poster_path, original_title, release_date, popularity, title, overview, vote_count }));
  };
  return (
   <Link to={`/Video/yt-clone:${title}`}>

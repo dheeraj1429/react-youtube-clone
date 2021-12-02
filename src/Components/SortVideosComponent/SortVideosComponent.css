@@ -1,6 +1,7 @@
 .yt__Recommond_Videos_Innre_Div {
  display: flex;
- margin: 0.7rem 0.5rem;
+ margin-bottom: 0.7rem;
+ margin-left: 0.7rem;
 }
 
 .yt__Recommond_Videos_Innre_Div img {

@@ -26,7 +26,7 @@
 }
 
 .yt__Videos_Link_Div svg {
- fill: var(--MainColor);
+ fill: var(--LightColorTwo);
  cursor: pointer;
  margin-right: 1rem;
 }
