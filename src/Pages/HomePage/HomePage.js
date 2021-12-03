@@ -23,7 +23,8 @@ function HomePage() {
    .then((data) => {
     dispatch(setData(data.results));
     setVideoData(data.results);
-   });
+   })
+   .catch((err) => console.log(err));
  };
 
  useEffect(() => {
@@ -39,7 +40,7 @@ function HomePage() {
 
    <div className="Video__Card__Component">
     {VideoData !== undefined ? (
-     VideoData.map(({ id, ...otherProps }) => <VideosCardComponent key={id} {...otherProps} />)
+     VideoData.map(({ id, ...otherProps }) => <VideosCardComponent key={id} {...otherProps} id={id} />)
     ) : (
      <div className="Snipper__Div">
       <img src="/images/roling.svg" />

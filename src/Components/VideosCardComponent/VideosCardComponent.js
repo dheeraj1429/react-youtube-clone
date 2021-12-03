@@ -6,12 +6,12 @@ import { selectedMovi } from '../../Redux/Action/action';
 
 import './VideosCardComponent.css';
 
-function VideosCardComponent({ poster_path, original_title, release_date, popularity, title, overview, vote_count }) {
+function VideosCardComponent({ poster_path, original_title, release_date, popularity, title, overview, vote_count, id }) {
  const dispatch = useDispatch();
 
  const EventHandlerFunction = function () {
   dispatch(hideAndShowNavbar(true));
-  dispatch(selectedMovi({ poster_path, original_title, release_date, popularity, title, overview, vote_count }));
+  dispatch(selectedMovi({ poster_path, original_title, release_date, popularity, title, overview, vote_count, id }));
  };
 
  return (

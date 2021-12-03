@@ -22,7 +22,7 @@ function YtRecommendVidesComponent() {
 
  return (
   <div className="yt__Recomment_Vides_Div">
-   {RecommondedVideos !== '' ? RecommondedVideos.map(({ id, ...othreProps }) => <SortVideosComponent key={id} {...othreProps} />) : null}
+   {RecommondedVideos !== '' ? RecommondedVideos.map(({ id, ...othreProps }) => <SortVideosComponent key={id} {...othreProps} id={id} />) : null}
   </div>
  );
 }

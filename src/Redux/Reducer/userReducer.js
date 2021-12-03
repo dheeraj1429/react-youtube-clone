@@ -11,6 +11,7 @@ const initalState = {
  showSecondPopUp: false,
  mode: false,
  LikeVideos: [],
+ UnlikeVideos: [],
 };
 
 const dataCombine = function (data, setData) {
@@ -91,16 +92,21 @@ const userReducer = function (state = initalState, action) {
    };
 
   case ACTION_TYPE.LIKE_VIDEOS:
+   const dataLikeSet = state.UnlikeVideos.filter((el) => el.title !== action.payload.title);
    return {
     ...state,
     LikeVideos: dataCombine(state.LikeVideos, action.payload),
-    // LikeVideos: [
-    //  ...state.LikeVideos,
-    //  {
-    //   ...action.payload,
-    //  },
-    // ],
+    UnlikeVideos: dataLikeSet,
    };
+
+  case ACTION_TYPE.UNLIKE_VIDEOS:
+   const dataDislikeSet = state.LikeVideos.filter((el) => el.title !== action.payload.title);
+   return {
+    ...state,
+    LikeVideos: dataDislikeSet,
+    UnlikeVideos: dataCombine(state.UnlikeVideos, action.payload),
+   };
+
   default:
    return state;
  }

@@ -69,3 +69,10 @@ export const likeVideos = function (data) {
   payload: data,
  };
 };
+
+export const unLike = function (data) {
+ return {
+  type: ACTION_TYPE.UNLIKE_VIDEOS,
+  payload: data,
+ };
+};

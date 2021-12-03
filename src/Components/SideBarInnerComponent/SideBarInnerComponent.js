@@ -1,14 +1,16 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+
 import { showPopup } from '../../Redux/Action/action';
 import { changeMode } from '../../Redux/Action/action';
 
 import './SideBarInnerComponent.css';
 
 function SideBarInnerComponent({ SubTitle, Icon, Data, onClick, Hide, Arrow, SecondPopup }) {
+ const location = useLocation();
  const selector = useSelector((state) => state.user);
  const dispatch = useDispatch();
 
@@ -27,7 +29,9 @@ function SideBarInnerComponent({ SubTitle, Icon, Data, onClick, Hide, Arrow, Sec
   <>
    <Link
     to={
-     SubTitle == 'Sign Out' || SubTitle == 'Home' || SubTitle == 'Appearance: Dark' || SubTitle == 'Appearance: Light'
+     SubTitle == 'Sign Out' || SubTitle == 'Appearance: Dark' || SubTitle == 'Appearance: Light'
+      ? `${location.pathname}`
+      : SubTitle == 'Home'
       ? '/'
       : SubTitle.replaceAll(' ', '_')
     }

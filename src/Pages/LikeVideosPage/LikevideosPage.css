@@ -1,0 +1,12 @@
+.LikeVideos__Contianer {
+ width: 100%;
+ padding: 0.5rem 1rem;
+ background-color: var(--LikeVideosBg);
+}
+
+.Like_Heading {
+ margin: 1rem 1.5rem;
+ color: var(--MainColor);
+ font-size: 2rem;
+ border-bottom: 1px solid var(--SmoothGrayTwo);
+}

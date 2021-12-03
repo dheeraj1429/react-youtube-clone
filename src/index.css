@@ -48,6 +48,9 @@ body::-webkit-scrollbar-thumb {
  --SmoothGray: #8b8b8b;
  --SmoothGrayTwo: #4d4d4d;
  --HoverColor: #383838;
+ --LikeVideosBg: #0f0f0f;
+ --LikeColor: rgb(30, 248, 219);
+ --UnLikeColor: rgb(255, 0, 0);
 }
 
 [data-theme='dark'] {
@@ -68,6 +71,9 @@ body::-webkit-scrollbar-thumb {
  --SmoothGray: #4d4d4d;
  --SmoothGrayTwo: #afafaf;
  --HoverColor: #9c9c9c;
+ --LikeVideosBg: #e1e1e1;
+ --LikeColor: rgb(30, 248, 219);
+ --UnLikeColor: rgb(255, 0, 0);
 }
 
 /* Gloabal Classes */

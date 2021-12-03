@@ -17,11 +17,13 @@ function VideoPlayComponent() {
 
  useEffect(() => {
   res();
-  movieTrailer(selector[0].title).then((res) => {
-   const data = new URLSearchParams(new URL(res).search);
-   const param = data.get('v');
-   setYoutubeVideo(param);
-  });
+  movieTrailer(selector[0].title)
+   .then((res) => {
+    const data = new URLSearchParams(new URL(res).search);
+    const param = data.get('v');
+    setYoutubeVideo(param);
+   })
+   .catch((err) => console.log(err));
  }, [selector[0].title]);
 
  const opts = {

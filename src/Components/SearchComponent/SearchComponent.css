@@ -16,7 +16,7 @@
  border-bottom: 1px solid var(--SmoothGrayTwo);
  padding: 1rem;
  outline: none;
- background-color: var(--ScrollNavbarColor);
+ background-color: var(--BodyColor);
  color: var(--SmoothGray);
 }
 
