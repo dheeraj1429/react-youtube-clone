@@ -22,3 +22,11 @@
  margin: 0.3rem 0;
  max-width: 100px;
 }
+
+/* Media */
+@media (max-width: 800px) {
+ .yt__Recommond_Videos_Innre_Div img {
+  width: 150px;
+  height: 80px;
+ }
+}

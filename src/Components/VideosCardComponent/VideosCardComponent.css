@@ -52,3 +52,8 @@
 }
 
 /* Media */
+@media (max-width: 820px) {
+ .VideoCard__Inner_Div {
+  width: 120px !important;
+ }
+}

@@ -55,3 +55,17 @@
  margin-right: 0.5rem;
  color: var(--LightColorTwo);
 }
+
+/* media */
+@media (max-width: 900px) {
+ .yt__Videos_Container {
+  flex-wrap: wrap;
+ }
+ .yt__Videos_Show_Div {
+  width: 100%;
+ }
+ .yt__Recomment_Vides_Div {
+  width: 100%;
+  margin-top: 1rem;
+ }
+}
