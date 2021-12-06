@@ -29,3 +29,8 @@ api iFrame ->
 
 http://iframe.ly/api/oembed?url=https%3A%2F%2Fvimeo.com%2F141567420&api_key=97cd1baefeeb78b13f605f
 http://iframe.ly/api/iframely?url=https%3A%2F%2Fvimeo.com%2F141567420&api_key=97cd1baefeeb78b13f605f
+
+https://react--clone-8ad29.web.app
+
+api -> https://www.freetogame.com/api/games?platform=pc
+website -> https://www.freetogame.com/api-doc

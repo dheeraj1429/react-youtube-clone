@@ -17,39 +17,39 @@ import { useDispatch } from 'react-redux';
 import './App.css';
 
 function App() {
- const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
- const [CurrentUserData, setCurrentUserData] = useState({
-  CurrentUserLogIn: null,
- });
-
- useEffect(() => {
-  auth.onAuthStateChanged((userAuth) => {
-   setCurrentUserData({ CurrentUserLogIn: userAuth });
-   dispatch(setCurrentUser(userAuth));
-   CreateUserProfileDocument(userAuth);
+  const [CurrentUserData, setCurrentUserData] = useState({
+    CurrentUserLogIn: null,
   });
- }, []);
 
- return (
-  <div className="App">
-   <NavbarComponent />
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      setCurrentUserData({ CurrentUserLogIn: userAuth });
+      dispatch(setCurrentUser(userAuth));
+      CreateUserProfileDocument(userAuth);
+    });
+  }, []);
 
-   <div className="Home__Container_Div">
-    <SideBarComponent />
+  return (
+    <div className="App">
+      <NavbarComponent />
 
-    {/* Routes */}
-    <Routes>
-     <Route exact path="/" element={<HomePage />} />
-     <Route exact path="/Video/yt-clone:Name" element={<VideosPlayPage />} />
-     <Route exact path="/Like" element={<LikeVideosPage />} />
-    </Routes>
-    {/* Routes */}
-   </div>
+      <div className="Home__Container_Div">
+        <SideBarComponent />
 
-   {/* Footer Component */}
-  </div>
- );
+        {/* Routes */}
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/Video/yt-clone:Name" element={<VideosPlayPage />} />
+          <Route exact path="/Like" element={<LikeVideosPage />} />
+        </Routes>
+        {/* Routes */}
+      </div>
+
+      {/* Footer Component */}
+    </div>
+  );
 }
 
 export default App;

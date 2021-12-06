@@ -1,13 +1,13 @@
 .yt__Video_iFrame_Div {
- width: 100%;
- height: 670px;
+  width: 100%;
+  height: 670px;
 }
 
 /* media */
 
 @media (max-width: 800px) {
- .yt__Video_iFrame_Div {
-  width: 100%;
-  height: 200px;
- }
+  .yt__Video_iFrame_Div {
+    width: 100%;
+    height: 200px;
+  }
 }
